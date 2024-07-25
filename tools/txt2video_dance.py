@@ -75,6 +75,7 @@ def txt2img(visual_path="vis_gt",
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    # 这个参数输入的是数据集的path
     parser.add_argument('--img_path', default='dancetrack', type=str, help='path to dancetrack dataset')
     parser.add_argument('--split', default='test', type=str, help='data split: [train, val, test]')
     parser.add_argument('--gt', default=False, action='store_true', help='False is to show prediction')
@@ -97,7 +98,8 @@ if __name__ == '__main__':
         if '.ipy' in show_video_name or 'seq' in show_video_name or 'DS_' in show_video_name:
             continue
         if args.gt:
-            txt_path = 'dancetrack/' + args.split + '/' + show_video_name + '/gt/gt.txt'
+            # txt_path = 'dancetrack/' + args.split + '/' + show_video_name + '/gt/gt.txt'
+            txt_path = args.img_path+ '/' + args.split + '/' + show_video_name + '/gt/gt.txt'
         else:
             txt_path = args.split + '/' + args.tracker + '/' + show_video_name + '.txt'
             assert os.path.exists(txt_path), f'{txt_path} does not exist, please run prediction first'

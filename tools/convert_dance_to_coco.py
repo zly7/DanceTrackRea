@@ -8,7 +8,8 @@ import json
 import cv2
 
 
-DATA_PATH = 'dancetrack'
+# DATA_PATH = 'dancetrack'
+DATA_PATH = "D:/ml_pro_master/research_for_multi_ot/dataset/dancetrack_data"
 OUT_PATH = os.path.join(DATA_PATH, 'annotations')
 # SPLITS = ['train', 'val', 'test']
 SPLITS = ['train']

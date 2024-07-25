@@ -1,3 +1,6 @@
+# zip
+*.zip
+*.tar
 # output dir
 vis*
 output

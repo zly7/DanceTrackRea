@@ -1,0 +1,12 @@
+# TODO: Update with exact module version
+loguru
+scikit-image
+Pillow
+thop
+ninja
+tabulate
+tensorboard
+motmetrics
+filterpy
+h5py
+
