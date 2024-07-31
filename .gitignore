@@ -1,6 +1,7 @@
 # zip
 *.zip
 *.tar
+YOLOX*/
 # output dir
 vis*
 output

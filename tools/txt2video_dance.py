@@ -49,27 +49,26 @@ def txt2img(visual_path="vis_gt",
                 cv2.putText(img, "{}".format(int(bbox[4])), (int(bbox[0])+5, int(bbox[1])+30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, color_list[bbox[4]%79].tolist(), 4)        
         cv2.imwrite(visual_path + "/" + show_video_name + "/{:0>8d}.jpg".format(img_id), img)
     print(show_video_name, args.tracker, "txt2img is done")
+    whether_img2video = False
+    if whether_img2video:
+        # img2video
+        print(show_video_name, args.tracker, "img2video is starting")
+        fps = 20
+        size = (960, 540)
+        if args.gt:
+            video_path = visual_path + "/" + show_video_name + ".avi"
+        else:
+            video_path = visual_path + "/" + show_video_name + "_"+ args.tracker +".avi"
+            
+        videowriter = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc('M','J','P','G'), fps, size)
+        saved_img_paths = gb.glob(visual_path  + "/" + show_video_name + "/*.jpg") 
+        for saved_img_path in sorted(saved_img_paths):
+            img = cv2.imread(saved_img_path)
+            img = cv2.resize(img, size)
+            videowriter.write(img)
 
-    
-    # img2video
-    print(show_video_name, args.tracker, "img2video is starting")
-    saved_img_paths = gb.glob(visual_path  + "/" + show_video_name + "/*.jpg") 
-    fps = 20
-    size = (960, 540)
-    if args.gt:
-        video_path = visual_path + "/" + show_video_name + ".avi"
-    else:
-        video_path = visual_path + "/" + show_video_name + "_"+ args.tracker +".avi"
-        
-    videowriter = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc('M','J','P','G'), fps, size)
-
-    for saved_img_path in sorted(saved_img_paths):
-        img = cv2.imread(saved_img_path)
-        img = cv2.resize(img, size)
-        videowriter.write(img)
-
-    videowriter.release()
-    print(show_video_name, args.tracker, "img2video is done")
+        videowriter.release()
+        print(show_video_name, args.tracker, "img2video is done")
 
 
 
@@ -101,7 +100,14 @@ if __name__ == '__main__':
             # txt_path = 'dancetrack/' + args.split + '/' + show_video_name + '/gt/gt.txt'
             txt_path = args.img_path+ '/' + args.split + '/' + show_video_name + '/gt/gt.txt'
         else:
-            txt_path = args.split + '/' + args.tracker + '/' + show_video_name + '.txt'
+            # txt_path = args.split + '/' + args.tracker + '/' + show_video_name + '.txt'
+            if args.split == 'test':
+                path_segment = "track_test_results"
+            elif args.split == 'val':
+                path_segment = "track_results"
+            else:
+                raise NotImplementedError
+            txt_path = "YOLOX_outputs/yolox_x/" +  path_segment + '/' + show_video_name + '.txt'
             assert os.path.exists(txt_path), f'{txt_path} does not exist, please run prediction first'
         
         p = Process(target=txt2img, args=(visual_path, show_video_name, img_path, txt_path, args))

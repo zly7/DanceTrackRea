@@ -9,10 +9,11 @@ import cv2
 
 
 # DATA_PATH = 'dancetrack'
-DATA_PATH = "D:/ml_pro_master/research_for_multi_ot/dataset/dancetrack_data"
+# DATA_PATH = "D:/ml_pro_master/research_for_multi_ot/dataset/dancetrack_data"
+DATA_PATH = "/home/zly/multi_ob/data/DanceTrack/"
 OUT_PATH = os.path.join(DATA_PATH, 'annotations')
 # SPLITS = ['train', 'val', 'test']
-SPLITS = ['train']
+SPLITS = ['val']
 
 if __name__ == '__main__':
 
@@ -35,7 +36,7 @@ if __name__ == '__main__':
 
             video_cnt += 1  # video sequence number.
             out['videos'].append({'id': video_cnt, 'file_name': seq})
-            seq_path = os.path.join(data_path, seq)
+            seq_path = os.path.join(data_path, seq) # 这里还挺离谱的，你这个LINUX的path必须要带斜杠在最后,不然会无法添加
             img_path = os.path.join(seq_path, 'img1')
             ann_path = os.path.join(seq_path, 'gt/gt.txt')
             images = os.listdir(img_path)

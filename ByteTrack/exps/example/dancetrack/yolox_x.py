@@ -98,7 +98,7 @@ class Exp(MyExp):
         
         if testdev:
             valdataset = MOTDataset(
-                data_dir=os.path.join(get_yolox_datadir(), "dancetrack"),
+                data_dir=os.path.join(get_yolox_datadir(), "DanceTrack"),
                 json_file=self.test_ann,
                 img_size=self.test_size,
                 name='test',
@@ -109,7 +109,7 @@ class Exp(MyExp):
             )
         else:
             valdataset = MOTDataset(
-                data_dir=os.path.join(get_yolox_datadir(), "dancetrack"),
+                data_dir=os.path.join(get_yolox_datadir(), "DanceTrack"),
                 json_file=self.val_ann,
                 img_size=self.test_size,
                 name='val',

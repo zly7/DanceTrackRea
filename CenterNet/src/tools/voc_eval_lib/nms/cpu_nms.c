@@ -1392,7 +1392,7 @@ static CYTHON_INLINE __pyx_t_5numpy_float32_t __pyx_f_3nms_7cpu_nms_min(__pyx_t_
  * cdef inline np.float32_t min(np.float32_t a, np.float32_t b):
  *     return a if a <= b else b             # <<<<<<<<<<<<<<
  * 
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):
  */
   if (((__pyx_v_a <= __pyx_v_b) != 0)) {
     __pyx_t_1 = __pyx_v_a;
@@ -1419,7 +1419,7 @@ static CYTHON_INLINE __pyx_t_5numpy_float32_t __pyx_f_3nms_7cpu_nms_min(__pyx_t_
 /* "nms/cpu_nms.pyx":17
  *     return a if a <= b else b
  * 
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):             # <<<<<<<<<<<<<<
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]
  */
@@ -1624,7 +1624,7 @@ static PyObject *__pyx_pf_3nms_7cpu_nms_cpu_nms(CYTHON_UNUSED PyObject *__pyx_se
 
   /* "nms/cpu_nms.pyx":18
  * 
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]
  *     cdef np.ndarray[np.float32_t, ndim=1] x2 = dets[:, 2]
@@ -1646,7 +1646,7 @@ static PyObject *__pyx_pf_3nms_7cpu_nms_cpu_nms(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_t_1 = 0;
 
   /* "nms/cpu_nms.pyx":19
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] x2 = dets[:, 2]
@@ -1806,14 +1806,14 @@ static PyObject *__pyx_pf_3nms_7cpu_nms_cpu_nms(CYTHON_UNUSED PyObject *__pyx_se
  * 
  *     cdef int ndets = dets.shape[0]             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.int_t, ndim=1] suppressed = \
- *             np.zeros((ndets), dtype=np.int)
+ *             np.zeros((ndets), dtype=np.int32)
  */
   __pyx_v_ndets = (__pyx_v_dets->dimensions[0]);
 
   /* "nms/cpu_nms.pyx":29
  *     cdef int ndets = dets.shape[0]
  *     cdef np.ndarray[np.int_t, ndim=1] suppressed = \
- *             np.zeros((ndets), dtype=np.int)             # <<<<<<<<<<<<<<
+ *             np.zeros((ndets), dtype=np.int32)             # <<<<<<<<<<<<<<
  * 
  *     # nominal indices
  */
@@ -2283,7 +2283,7 @@ static PyObject *__pyx_pf_3nms_7cpu_nms_cpu_nms(CYTHON_UNUSED PyObject *__pyx_se
   /* "nms/cpu_nms.pyx":17
  *     return a if a <= b else b
  * 
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):             # <<<<<<<<<<<<<<
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]
  */
@@ -4409,7 +4409,7 @@ static int __Pyx_InitCachedConstants(void) {
 
   /* "nms/cpu_nms.pyx":18
  * 
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]
  *     cdef np.ndarray[np.float32_t, ndim=1] x2 = dets[:, 2]
@@ -4422,7 +4422,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__2);
 
   /* "nms/cpu_nms.pyx":19
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] x2 = dets[:, 2]
@@ -4557,7 +4557,7 @@ static int __Pyx_InitCachedConstants(void) {
   /* "nms/cpu_nms.pyx":17
  *     return a if a <= b else b
  * 
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):             # <<<<<<<<<<<<<<
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]
  */
@@ -4697,7 +4697,7 @@ PyMODINIT_FUNC PyInit_cpu_nms(void)
   /* "nms/cpu_nms.pyx":17
  *     return a if a <= b else b
  * 
- * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh):             # <<<<<<<<<<<<<<
+ * def cpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh):             # <<<<<<<<<<<<<<
  *     cdef np.ndarray[np.float32_t, ndim=1] x1 = dets[:, 0]
  *     cdef np.ndarray[np.float32_t, ndim=1] y1 = dets[:, 1]
  */

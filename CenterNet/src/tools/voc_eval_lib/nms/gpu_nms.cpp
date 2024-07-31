@@ -1276,7 +1276,7 @@ static PyObject *__pyx_codeobj__12;
 /* "nms/gpu_nms.pyx":16
  *     void _nms(np.int32_t*, int*, np.float32_t*, int, int, float, int)
  * 
- * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh,             # <<<<<<<<<<<<<<
+ * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh,             # <<<<<<<<<<<<<<
  *             np.int32_t device_id=0):
  *     cdef int boxes_num = dets.shape[0]
  */
@@ -1432,7 +1432,7 @@ static PyObject *__pyx_pf_3nms_7gpu_nms_gpu_nms(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_pybuffernd_dets.diminfo[0].strides = __pyx_pybuffernd_dets.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dets.diminfo[0].shape = __pyx_pybuffernd_dets.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_dets.diminfo[1].strides = __pyx_pybuffernd_dets.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_dets.diminfo[1].shape = __pyx_pybuffernd_dets.rcbuffer->pybuffer.shape[1];
 
   /* "nms/gpu_nms.pyx":18
- * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh,
+ * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh,
  *             np.int32_t device_id=0):
  *     cdef int boxes_num = dets.shape[0]             # <<<<<<<<<<<<<<
  *     cdef int boxes_dim = dets.shape[1]
@@ -1668,7 +1668,7 @@ static PyObject *__pyx_pf_3nms_7gpu_nms_gpu_nms(CYTHON_UNUSED PyObject *__pyx_se
   /* "nms/gpu_nms.pyx":16
  *     void _nms(np.int32_t*, int*, np.float32_t*, int, int, float, int)
  * 
- * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh,             # <<<<<<<<<<<<<<
+ * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh,             # <<<<<<<<<<<<<<
  *             np.int32_t device_id=0):
  *     cdef int boxes_num = dets.shape[0]
  */
@@ -3865,7 +3865,7 @@ static int __Pyx_InitCachedConstants(void) {
   /* "nms/gpu_nms.pyx":16
  *     void _nms(np.int32_t*, int*, np.float32_t*, int, int, float, int)
  * 
- * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh,             # <<<<<<<<<<<<<<
+ * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh,             # <<<<<<<<<<<<<<
  *             np.int32_t device_id=0):
  *     cdef int boxes_num = dets.shape[0]
  */
@@ -4017,7 +4017,7 @@ PyMODINIT_FUNC PyInit_gpu_nms(void)
   /* "nms/gpu_nms.pyx":16
  *     void _nms(np.int32_t*, int*, np.float32_t*, int, int, float, int)
  * 
- * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float thresh,             # <<<<<<<<<<<<<<
+ * def gpu_nms(np.ndarray[np.float32_t, ndim=2] dets, np.float64 thresh,             # <<<<<<<<<<<<<<
  *             np.int32_t device_id=0):
  *     cdef int boxes_num = dets.shape[0]
  */
